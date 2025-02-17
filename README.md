@@ -3,7 +3,7 @@
 Dockerizar django junto con los servicios necesarios.
 =======
 # DashboardMarketing
-Objetivo: Generar un Dashboard para elección de donde publicar publicidad según el cliente objetivo
+Objetivo: Generar un Dashboard para elección de donde publicar publicidad según el cliente objetivo   
 Dataset: Obtained from Kaggle, social media use
 
 ## Tabla de contenido
