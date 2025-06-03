@@ -1,8 +1,8 @@
 services:
   django:
     build: ./PythonDocker
-    image: python:3.10
     container_name: contenedor_django
+    command: python manage.py runserver 0.0.0.0:8000
     restart: always
     ports:
       - "8000:8000"
@@ -17,8 +17,12 @@ services:
     container_name: mysql_db
     ports:
       - "3306:3306"
+    enviroment: 
+      MYSQL_ROOT_PASSWORD: root
     restart: always
+    volumes:
+      - ./MySQLDocker/conf:/etc/mysql/conf.d
     healthcheck:
-      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-pmy-secret-pw", "-e", "SELECT 1"]
+      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-proot", "-e", "SELECT 1"]
       timeout: 20s
       retries: 10
